@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8829640983121210e912a230ceaad3cd" label="Course Type" max_length="40" name="x_1557802_feedba_1_course_type" type="collection">
+        <element display="true" label="Course Type" mandatory="true" max_length="40" name="course_type" type="string"/>
+        <element label="Comment" max_length="40" name="comment" type="string"/>
+    </element>
+</database>

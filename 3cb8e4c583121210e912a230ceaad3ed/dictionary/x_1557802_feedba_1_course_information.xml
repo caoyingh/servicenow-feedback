@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="dd1a2c4983121210e912a230ceaad335" label="Course Information" max_length="40" name="x_1557802_feedba_1_course_information" type="collection">
+        <element display="true" label="Course Name" mandatory="true" max_length="100" name="course_name" type="string"/>
+        <element label="Course Type" mandatory="true" max_length="32" name="course_information" reference="x_1557802_feedba_1_course_type" type="reference"/>
+        <element choice="3" default="active" label="Course Status" mandatory="true" max_length="40" name="course_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Active" sequence="0" value="active"/>
+                <element inactive_on_update="false" label="Inactive" sequence="1" value="inactive"/>
+            </choice>
+        </element>
+        <element label="Course Teacher" mandatory="true" max_length="40" name="course_teacher" type="string"/>
+        <index name="index">
+            <element name="course_information"/>
+        </index>
+    </element>
+</database>

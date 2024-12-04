@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="080c680d83121210e912a230ceaad301" label="Feedback Data" max_length="40" name="x_1557802_feedba_1_feedback_data" type="collection">
+        <element label="Comment for Course" max_length="400" name="comment_for_course" type="string"/>
+        <element label="User" max_length="32" name="u_user" reference="sys_user" type="reference"/>
+        <element choice="3" default="highest" label="Rating" max_length="40" name="u_rating" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="5" sequence="1" value="5"/>
+                <element inactive_on_update="false" label="10 highest" sequence="2" value="highest"/>
+                <element inactive_on_update="false" label="1 lowest" sequence="0" value="lowest"/>
+            </choice>
+        </element>
+        <element label="Course Type" max_length="32" name="course_type" reference="x_1557802_feedba_1_course_type" type="reference"/>
+        <element display="true" label="Course Name" max_length="32" name="course_name" reference="x_1557802_feedba_1_course_information" type="reference"/>
+        <index name="index">
+            <element name="course_name"/>
+        </index>
+        <index name="index2">
+            <element name="course_type"/>
+        </index>
+        <index name="index3">
+            <element name="u_user"/>
+        </index>
+    </element>
+</database>

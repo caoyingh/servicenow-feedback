@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="User Information" section_id="f40ce40d83121210e912a230ceaad3ef" sys_domain="global" table="x_1557802_feedba_1_feedback_data" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_user</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 02:53:57</sys_created_on>
+            <sys_id>6ccda4cd83121210e912a230ceaad33d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="User Information" display_value="User Information" name="x_1557802_feedba_1_feedback_data" sys_domain="global" view="Default view">f40ce40d83121210e912a230ceaad3ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 02:53:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 02:53:57</sys_created_on>
+            <sys_id>64cda4cd83121210e912a230ceaad33e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="User Information" display_value="User Information" name="x_1557802_feedba_1_feedback_data" sys_domain="global" view="Default view">f40ce40d83121210e912a230ceaad3ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 02:53:57</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_user.email</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 02:53:57</sys_created_on>
+            <sys_id>6ccda4cd83121210e912a230ceaad33e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="User Information" display_value="User Information" name="x_1557802_feedba_1_feedback_data" sys_domain="global" view="Default view">f40ce40d83121210e912a230ceaad3ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 02:53:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>User Information</caption>
+            <header>false</header>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 02:46:19</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f40ce40d83121210e912a230ceaad3ef</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>x_1557802_feedba_1_feedback_data</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Feedback Collection" source="x_1557802_feedba_1">3cb8e4c583121210e912a230ceaad3ed</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Feedback Collection">3cb8e4c583121210e912a230ceaad3ed</sys_scope>
+            <sys_update_name>sys_ui_section_f40ce40d83121210e912a230ceaad3ef</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 02:53:56</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
