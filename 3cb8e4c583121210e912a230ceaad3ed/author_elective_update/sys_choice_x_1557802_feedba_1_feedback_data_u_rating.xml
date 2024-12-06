@@ -20,37 +20,94 @@
             <element>u_rating</element>
             <hint/>
             <inactive>false</inactive>
-            <label>1 lowest</label>
+            <label>1 Lowest</label>
             <language>en</language>
             <name>x_1557802_feedba_1_feedback_data</name>
             <sequence>0</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-12-04 02:49:28</sys_created_on>
+            <sys_created_on>2024-12-04 05:24:23</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-12-04 02:49:28</sys_updated_on>
-            <value>lowest</value>
+            <sys_updated_on>2024-12-04 05:24:23</sys_updated_on>
+            <value>1</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
             <element>u_rating</element>
             <hint/>
             <inactive>false</inactive>
-            <label>5</label>
+            <label>2</label>
             <language>en</language>
             <name>x_1557802_feedba_1_feedback_data</name>
             <sequence>1</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-12-04 02:49:28</sys_created_on>
+            <sys_created_on>2024-12-04 05:20:43</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-12-04 02:49:28</sys_updated_on>
+            <sys_updated_on>2024-12-04 05:20:43</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_rating</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>3</label>
+            <language>en</language>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 05:20:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 05:20:43</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_rating</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>4</label>
+            <language>en</language>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 05:20:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 05:20:43</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_rating</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>5 Medium</label>
+            <language>en</language>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 05:24:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 05:24:23</sys_updated_on>
             <value>5</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -58,19 +115,95 @@
             <element>u_rating</element>
             <hint/>
             <inactive>false</inactive>
-            <label>10 highest</label>
+            <label>6</label>
             <language>en</language>
             <name>x_1557802_feedba_1_feedback_data</name>
-            <sequence>2</sequence>
+            <sequence>5</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-12-04 02:49:28</sys_created_on>
+            <sys_created_on>2024-12-04 05:20:43</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-12-04 02:49:28</sys_updated_on>
-            <value>highest</value>
+            <sys_updated_on>2024-12-04 05:20:43</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_rating</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>7</label>
+            <language>en</language>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 05:20:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 05:20:43</sys_updated_on>
+            <value>7</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_rating</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>8</label>
+            <language>en</language>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 05:20:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 05:20:43</sys_updated_on>
+            <value>8</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_rating</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>9</label>
+            <language>en</language>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 05:20:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 05:20:43</sys_updated_on>
+            <value>9</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_rating</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>10 Highest</label>
+            <language>en</language>
+            <name>x_1557802_feedba_1_feedback_data</name>
+            <sequence>9</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-12-04 05:24:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-12-04 05:24:23</sys_updated_on>
+            <value>10</value>
         </sys_choice>
     </sys_choice>
 </record_update>

@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="080c680d83121210e912a230ceaad301" label="Feedback Data" max_length="40" name="x_1557802_feedba_1_feedback_data" type="collection">
-        <element label="Comment for Course" max_length="400" name="comment_for_course" type="string"/>
+        <element label="Comment" max_length="400" name="comment_for_course" type="string"/>
         <element label="User" max_length="32" name="u_user" reference="sys_user" type="reference"/>
-        <element choice="3" default="highest" label="Rating" max_length="40" name="u_rating" type="choice">
+        <element choice="3" default="10" label="Rating" max_length="40" name="u_rating" type="choice">
             <choice>
-                <element inactive_on_update="false" label="5" sequence="1" value="5"/>
-                <element inactive_on_update="false" label="10 highest" sequence="2" value="highest"/>
-                <element inactive_on_update="false" label="1 lowest" sequence="0" value="lowest"/>
+                <element inactive_on_update="false" label="4" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="7" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="8" sequence="7" value="8"/>
+                <element inactive_on_update="false" label="1 Lowest" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="5 Medium" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="9" sequence="8" value="9"/>
+                <element inactive_on_update="false" label="2" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="10 Highest" sequence="9" value="10"/>
+                <element inactive_on_update="false" label="3" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="6" sequence="5" value="6"/>
             </choice>
         </element>
         <element label="Course Type" max_length="32" name="course_type" reference="x_1557802_feedba_1_course_type" type="reference"/>
-        <element display="true" label="Course Name" max_length="32" name="course_name" reference="x_1557802_feedba_1_course_information" type="reference"/>
+        <element choice="3" display="true" label="Course Name" max_length="32" name="course_name" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="test" sequence="0" value="test"/>
+            </choice>
+        </element>
         <index name="index">
             <element name="course_name"/>
         </index>
