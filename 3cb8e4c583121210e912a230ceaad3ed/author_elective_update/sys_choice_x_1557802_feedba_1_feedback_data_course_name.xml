@@ -20,19 +20,19 @@
             <element>course_name</element>
             <hint/>
             <inactive>false</inactive>
-            <label>test</label>
+            <label>Please choose course type first</label>
             <language>en</language>
             <name>x_1557802_feedba_1_feedback_data</name>
             <sequence>0</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-12-06 02:26:58</sys_created_on>
+            <sys_created_on>2024-12-09 06:28:35</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-12-06 02:26:58</sys_updated_on>
-            <value>test</value>
+            <sys_updated_on>2024-12-09 06:28:35</sys_updated_on>
+            <value>please_choose_course_type_first</value>
         </sys_choice>
     </sys_choice>
 </record_update>

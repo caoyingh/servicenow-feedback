@@ -14,18 +14,21 @@
     if (isLoading || newValue === '') {
         return;
     }
-    var courseNameDropdown = g_form.getControl('course_name');
-g_form.clearOptions('course_name');
+
+    g_form.clearOptions('course_name');
+
     var ga = new GlideAjax('GetCourseNameList');
     ga.addParam('sysparm_name', 'getCourseNames');
-    ga.addParam('sysparm_course_type', newValue);
+    ga.addParam('sysparm_course_type', g_form.getValue('course_type'));
 
-    ga.getXMLAnswer(function(response) {
-        var courseNames = JSON.parse(response);
-        for (var i = 0; i < courseNames.length; i++) {
-            g_form.addOption('course_name', courseNames[i], courseNames[i]);
+    ga.getXML(populateCourseNameList);
+
+    function populateCourseNameList(response) {
+        var results = JSON.parse(response.responseXML.documentElement.getAttribute("answer"));
+        for (var i = 0; i < results.length; i++) {
+            g_form.addOption('course_name', results[i], results[i]);
         }
-    });
+    }
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -33,7 +36,7 @@ g_form.clearOptions('course_name');
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2eab75d583521210e912a230ceaad3e5</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Get New Course Name List</sys_name>
         <sys_overrides/>
         <sys_package display_value="Feedback Collection" source="x_1557802_feedba_1">3cb8e4c583121210e912a230ceaad3ed</sys_package>
@@ -41,7 +44,7 @@ g_form.clearOptions('course_name');
         <sys_scope display_value="Feedback Collection">3cb8e4c583121210e912a230ceaad3ed</sys_scope>
         <sys_update_name>sys_script_client_2eab75d583521210e912a230ceaad3e5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-05 07:59:30</sys_updated_on>
+        <sys_updated_on>2024-12-09 06:26:42</sys_updated_on>
         <table>x_1557802_feedba_1_feedback_data</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

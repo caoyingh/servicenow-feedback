@@ -19,7 +19,7 @@
         <element label="Course Type" max_length="32" name="course_type" reference="x_1557802_feedba_1_course_type" type="reference"/>
         <element choice="3" display="true" label="Course Name" max_length="32" name="course_name" type="choice">
             <choice>
-                <element inactive_on_update="false" label="test" sequence="0" value="test"/>
+                <element inactive_on_update="false" label="Please choose course type first" sequence="0" value="please_choose_course_type_first"/>
             </choice>
         </element>
         <index name="index">

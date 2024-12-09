@@ -13,14 +13,23 @@
 GetCourseNameList.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     getCourseNames: function() {
+
         var courseType = this.getParameter('sysparm_course_type');
         var courseNames = [];
-		
-        var gr = new GlideRecord('x_1557802_feedba_1_course_information');
-        gr.addQuery('course_type', courseType);
-        gr.query();
-        while (gr.next()) {
-            courseNames.push(gr.course_name);
+
+        var grCourseType = new GlideRecord('x_1557802_feedba_1_course_type');
+        grCourseType.get(courseType);
+
+        var grCourseInformation = new GlideRecord('x_1557802_feedba_1_course_information');
+
+        grCourseInformation.addQuery("course_information.course_type", grCourseType.course_type);
+        grCourseInformation.query();
+
+        while (grCourseInformation.next()) {
+            courseNames.push(grCourseInformation.getValue("course_name"));
+        }
+        for (var e of courseNames) {
+            gs.info(e);
         }
 
         return JSON.stringify(courseNames);
@@ -32,14 +41,14 @@ GetCourseNameList.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-05 07:46:12</sys_created_on>
         <sys_id>c782325d83561210e912a230ceaad3c2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>GetCourseNameList</sys_name>
         <sys_package display_value="Feedback Collection" source="x_1557802_feedba_1">3cb8e4c583121210e912a230ceaad3ed</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Feedback Collection">3cb8e4c583121210e912a230ceaad3ed</sys_scope>
         <sys_update_name>sys_script_include_c782325d83561210e912a230ceaad3c2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-05 07:46:12</sys_updated_on>
+        <sys_updated_on>2024-12-09 06:25:53</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>c782325d83561210e912a230ceaad3c2</id>
