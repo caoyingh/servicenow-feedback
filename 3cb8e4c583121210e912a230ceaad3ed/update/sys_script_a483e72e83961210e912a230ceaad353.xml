@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1557802_feedba_1_feedback_data</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Auto-numbering of feedbacks</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    var gr = new GlideRecord('x_1557802_feedba_1_feedback_data');
+    gr.orderByDesc('u_feedback_no');
+    gr.query();
+
+    if (gr.next()) {
+        gs.info("gr.next()");
+        var lastNumber = parseInt(gr.getValue('u_feedback_no'));
+        var newNumber = (lastNumber + 1).toString().padStart(8, '0');
+        current.setValue('u_feedback_no', newNumber);
+        gs.info("--------------newNumber=" + newNumber);
+    } else {
+        gs.info("gr.next()-else");
+        current.setValue('u_feedback_no', '00000001');
+    }
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-09 08:02:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a483e72e83961210e912a230ceaad353</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Auto-numbering of feedbacks</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Feedback Collection" source="x_1557802_feedba_1">3cb8e4c583121210e912a230ceaad3ed</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback Collection">3cb8e4c583121210e912a230ceaad3ed</sys_scope>
+        <sys_update_name>sys_script_a483e72e83961210e912a230ceaad353</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-10 02:48:12</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=a483e72e83961210e912a230ceaad353"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>a483e72e83961210e912a230ceaad353</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-09 08:02:15</sys_created_on>
+        <sys_id>1544672e83961210e912a230ceaad379</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-09 08:02:15</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
