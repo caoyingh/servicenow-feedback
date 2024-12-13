@@ -5,7 +5,7 @@
         <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
+        <action_update>false</action_update>
         <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
@@ -28,12 +28,11 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
-    
+
     var userValue = current.getValue('u_user');
     var courseTypeValue = current.getValue('course_type');
     var courseNameValue = current.getValue('course_name');
 
-    
     var gr = new GlideRecord('x_1557802_feedba_1_feedback_data');
     gr.addQuery('u_user', userValue);
     gr.addQuery('course_type', courseTypeValue);
@@ -42,11 +41,32 @@
     gr.query();
 
     if (gr.next()) {
+        gs.info("--------------update-------------");
         gr.setValue('u_rating', current.getValue('u_rating'));
         gr.setValue('comment_for_course', current.getValue('comment_for_course'));
+        // gr.setValue('u_feedback_no', current.getValue('u_feedback_no'));
+
         gr.update();
+
+        gs.info("------??????-------current.setWorkflow(false)");
+        current.setAbortAction(true);
+       
     } else {
-        current.insert();
+        gs.info("--------------insert-------------");
+        //Auto-numbering of new feedbacks 
+        var gr2 = new GlideRecord('x_1557802_feedba_1_feedback_data');
+        gr2.orderByDesc('u_feedback_no');
+        gr2.query();
+
+        if (gr2.next()) {
+            var lastNumber = parseInt(gr2.getValue('u_feedback_no'));
+            var newNumber = (lastNumber + 1).toString().padStart(8, '0');
+            current.setValue('u_feedback_no', newNumber);
+            // gs.info("--------------newNumber=" + newNumber);
+        } else {
+            current.setValue('u_feedback_no', '00000001');
+        }
+       // gs.info("------??????-------return true");
     }
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -55,7 +75,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>792ddfe283961210e912a230ceaad3a5</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Update when duplicated</sys_name>
         <sys_overrides/>
         <sys_package display_value="Feedback Collection" source="x_1557802_feedba_1">3cb8e4c583121210e912a230ceaad3ed</sys_package>
@@ -63,7 +83,7 @@
         <sys_scope display_value="Feedback Collection">3cb8e4c583121210e912a230ceaad3ed</sys_scope>
         <sys_update_name>sys_script_792ddfe283961210e912a230ceaad3a5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-09 07:42:35</sys_updated_on>
+        <sys_updated_on>2024-12-12 02:05:42</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

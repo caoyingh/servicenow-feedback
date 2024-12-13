@@ -3,10 +3,10 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>true</action_insert>
-        <action_query>false</action_query>
+        <action_insert>false</action_insert>
+        <action_query>true</action_query>
         <action_update>false</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -19,7 +19,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>Auto-numbering of feedbacks</name>
-        <order>100</order>
+        <order>200</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -33,13 +33,11 @@
     gr.query();
 
     if (gr.next()) {
-        gs.info("gr.next()");
         var lastNumber = parseInt(gr.getValue('u_feedback_no'));
         var newNumber = (lastNumber + 1).toString().padStart(8, '0');
         current.setValue('u_feedback_no', newNumber);
-        gs.info("--------------newNumber=" + newNumber);
+       // gs.info("--------------newNumber=" + newNumber);
     } else {
-        gs.info("gr.next()-else");
         current.setValue('u_feedback_no', '00000001');
     }
 })(current, previous);]]></script>
@@ -49,7 +47,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a483e72e83961210e912a230ceaad353</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Auto-numbering of feedbacks</sys_name>
         <sys_overrides/>
         <sys_package display_value="Feedback Collection" source="x_1557802_feedba_1">3cb8e4c583121210e912a230ceaad3ed</sys_package>
@@ -57,7 +55,7 @@
         <sys_scope display_value="Feedback Collection">3cb8e4c583121210e912a230ceaad3ed</sys_scope>
         <sys_update_name>sys_script_a483e72e83961210e912a230ceaad353</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-10 02:48:12</sys_updated_on>
+        <sys_updated_on>2024-12-11 03:32:42</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

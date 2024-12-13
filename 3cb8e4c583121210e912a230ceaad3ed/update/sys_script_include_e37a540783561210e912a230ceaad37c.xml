@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1557802_feedba_1.updateOrInsert</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>updateOrInsert</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var updateOrInsert = Class.create();
+updateOrInsert.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    handleUpdateOrInsert: function() {
+        var flag = "";
+        var grUser = new GlideRecord('sys_user');
+        grUser.get(this.getParameter('user'));
+        var user = grUser.name;
+
+        var grCourseType = new GlideRecord('x_1557802_feedba_1_course_type');
+        grCourseType.get(this.getParameter('type'));
+        var type = grCourseType.course_type;
+
+        var nameValue = this.getParameter('name');
+        var rating = this.getParameter('rating');
+        var comment = this.getParameter('comment');
+
+        var gr = new GlideRecord('x_1557802_feedba_1_feedback_data');
+        gr.addQuery('u_user.name', user);
+        gr.addQuery('course_type.course_type', type);
+        gr.addQuery('course_name', nameValue);
+        gr.query();
+
+        gs.info("====??????=======user=" + user);
+        gs.info("====??????=======type=" + type);
+        gs.info("====??????=======nameValue=" + nameValue);
+        gs.info("====??????=======rating=" + rating);
+        gs.info("====??????=======comment=" + comment);
+        try {
+            if (gr.next()) {
+
+                gs.info("===========update======gr==" + gr.sys_id);
+
+                gr.setValue('u_rating', rating);
+                gr.setValue('comment_for_course', comment);
+                // gr.setValue('u_feedback_no', 'AAAAAAAA');
+
+                gr.update();
+                gs.info("************finish update");
+                flag = "UPDATE";
+            } else {
+
+                gs.info("===========insert========");
+                //Auto-numbering of new feedbacks 
+                var grNo = new GlideRecord('x_1557802_feedba_1_feedback_data');
+                grNo.initialize();
+                grNo.orderByDesc('u_feedback_no');
+                grNo.query();
+                var feedbackNo = '';
+                if (grNo.next()) {
+                    var lastNumber = parseInt(grNo.getValue('u_feedback_no'));
+                    var newNumber = (lastNumber + 1).toString().padStart(8, '0');
+                    feedbackNo = newNumber;
+                    // gs.info("--------------newNumber=" + newNumber);
+                } else {
+                    feedbackNo = '00000001';
+                }
+
+                gs.info("===========feedbackNo========" + feedbackNo);
+
+
+                var grNew = new GlideRecord('x_1557802_feedba_1_feedback_data');
+                grNew.initialize();
+
+                gs.info("====???INSERT???=======user=" + user);
+                gs.info("====???INSERT???=======type=" + type);
+                gs.info("====???INSERT???=======nameValue=" + nameValue);
+                gs.info("====???INSERT???=======rating=" + rating);
+                gs.info("====???INSERT???=======comment=" + comment);
+
+
+                gs.info("===========feedbackNo====feedbackNo====");
+                grNew.u_feedback_no = feedbackNo;
+                gs.info("===========feedbackNo====userValue====");
+                grNew.u_user = this.getParameter('user');
+                gs.info("===========feedbackNo====course_type====");
+                grNew.course_type = this.getParameter('type');
+                gs.info("===========feedbackNo====nameValue====");
+                grNew.course_name = nameValue;
+                gs.info("===========feedbackNo====rating====");
+                grNew.u_rating = rating;
+                gs.info("===========feedbackNo====comment====");
+                grNew.comment_for_course = comment;
+                gs.info("===========feedbackNo====grNew.insert();====");
+                grNew.insert();
+                gs.info("************finish insert");
+                flag = "INSERT";
+            }
+        } catch (e) {
+            gs.error("!!!!!!!!!Error:" + e);
+        }
+        gs.info("====88888888888=======flag=" + flag);
+        return flag;
+    }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-10 06:38:55</sys_created_on>
+        <sys_id>e37a540783561210e912a230ceaad37c</sys_id>
+        <sys_mod_count>48</sys_mod_count>
+        <sys_name>updateOrInsert</sys_name>
+        <sys_package display_value="Feedback Collection" source="x_1557802_feedba_1">3cb8e4c583121210e912a230ceaad3ed</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Feedback Collection">3cb8e4c583121210e912a230ceaad3ed</sys_scope>
+        <sys_update_name>sys_script_include_e37a540783561210e912a230ceaad37c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-12 04:03:53</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e37a540783561210e912a230ceaad37c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-10 06:38:55</sys_created_on>
+        <sys_id>1aca908383561210e912a230ceaad3aa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-10 06:38:55</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

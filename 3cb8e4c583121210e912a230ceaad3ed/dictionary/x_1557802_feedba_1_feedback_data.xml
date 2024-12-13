@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="080c680d83121210e912a230ceaad301" label="Feedback Data" max_length="40" name="x_1557802_feedba_1_feedback_data" type="collection">
         <element label="Comment" max_length="400" name="comment_for_course" type="string"/>
-        <element label="User" max_length="32" name="u_user" reference="sys_user" type="reference"/>
+        <element label="User" mandatory="true" max_length="32" name="u_user" reference="sys_user" type="reference"/>
         <element choice="3" default="10" label="Rating" max_length="40" name="u_rating" type="choice">
             <choice>
                 <element inactive_on_update="false" label="4" sequence="3" value="4"/>
@@ -17,8 +17,8 @@
             </choice>
         </element>
         <element display="true" label="Feedback No." max_length="40" name="u_feedback_no" type="string"/>
-        <element label="Course Type" max_length="32" name="course_type" reference="x_1557802_feedba_1_course_type" type="reference"/>
-        <element choice="3" label="Course Name" max_length="32" name="course_name" type="choice">
+        <element label="Course Type" mandatory="true" max_length="32" name="course_type" reference="x_1557802_feedba_1_course_type" type="reference"/>
+        <element choice="3" default="please_choose_course_type_first" label="Course Name" max_length="32" name="course_name" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Please choose course type first" sequence="0" value="please_choose_course_type_first"/>
             </choice>
